@@ -7,8 +7,8 @@
 def pascal_triangle(n):
     """
     Returns a list of lists of integers representing the Pascal’s triangle of n:
-Returns an empty list if n <= 0
-You can assume n will be always an integer
+    Returns an empty list if n <= 0
+    You can assume n will be always an integer
     representing the Pascal Triangle of n
     returns empty list if n <= 0
     """

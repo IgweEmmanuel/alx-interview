@@ -28,7 +28,7 @@ def validUTF8(data):
                 continue
             if next_bits == 1 or next_bits > 4:
                 return False
-        if not (item & mask1 and not (item & mask2)):
+        elif not (item & mask1 and not (item & mask2)):
             return False
         next_bits -= 1
     return next_bits == 0

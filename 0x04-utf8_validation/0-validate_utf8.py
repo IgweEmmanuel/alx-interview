@@ -4,7 +4,11 @@ utf-8 validation
 """
 
 def validUTF8(data):
-    # Number of bytes in the current UTF-8 character
+    """
+    Number of bytes in the current UTF-8 character
+    Args:
+        data([]): data to check
+    """
     num_bytes = 0
 
     # Masks to check the most significant bits

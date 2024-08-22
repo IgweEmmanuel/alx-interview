@@ -3,40 +3,32 @@
 utf-8 validation
 """
 
+
 def validUTF8(data):
     """
     Number of bytes in the current UTF-8 character
     Args:
         data([]): data to check
     """
-    num_bytes = 0
+    next_bits = 0
 
-    # Masks to check the most significant bits
-    mask1 = 1 << 7  # 10000000
-    mask2 = 1 << 6  # 01000000
+    mask1 = 1 << 7
+    mask2 = 1 << 6
 
-    for byte in data:
+    for item in data:
         mask = 1 << 7
-        if num_bytes == 0:
-            # Count the number of leading 1s in the current byte
-            while byte & mask:
-                num_bytes += 1
+
+        if next_bits == 0:
+
+            while item & mask:
+                next_bits += 1
                 mask >>= 1
 
-            # For 1-byte character (ASCII), no additional bytes expected
-            if num_bytes == 0:
+            if next_bits == 1 or next_bits > 4:
+                return False
+            elif next_bits == 0:
                 continue
-
-            # If num_bytes is 1 or more than 4, it's invalid
-            if num_bytes == 1 or num_bytes > 4:
-                return False
-        else:
-            # If this byte is not starting with '10', it's invalid
-            if not (byte & mask1 and not (byte & mask2)):
-                return False
-
-        # Decrement the count of remaining bytes
-        num_bytes -= 1
-
-    # If num_bytes is not zero, then we have leftover bytes, which is invalid
-    return num_bytes == 0
+        if not (item & mask1 and not (item & mask2)):
+            return False
+        next_bits -= 1
+    return next_bits == 0

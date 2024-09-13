@@ -4,7 +4,12 @@
 
 
 def rotate_2d_matrix(matrix):
-    """Rotates an m by n 2D matrix in place.
+    """
+    Rotates an m by n 2D matrix in place.
+    Args:
+        matrix(List): matrix
+    Return:
+        - returns reversed matrix
     """
     if type(matrix) != list:
         return

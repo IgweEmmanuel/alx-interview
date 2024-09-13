@@ -5,20 +5,20 @@
 def rotate_2d_matrix(matrix):
     """Rotates an m by n 2D matrix in place.
     """
-    if type(matrix) != list:
-        return
+    # if type(matrix) != list:
+    #     return
 
-    if len(matrix) <= 0:
-        return
+    # if len(matrix) <= 0:
+    #     return
 
-    if not all(map(lambda x: type(x) == list, matrix)):
-        return
+    # if not all(map(lambda x: type(x) == list, matrix)):
+    #     return
 
     rows = len(matrix)
     cols = len(matrix[0])
 
-    if not all(map(lambda x: len(x) == cols, matrix)):
-        return
+    # if not all(map(lambda x: len(x) == cols, matrix)):
+    #     return
 
     c, r = 0, rows - 1
 

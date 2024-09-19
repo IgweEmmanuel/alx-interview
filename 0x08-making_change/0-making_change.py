@@ -2,7 +2,16 @@
 """Change making module.
 """
 
+
 def makeChange(coins, total):
+    """
+    make change
+    Args:
+        coins(int)
+        total(int)
+    Return:
+        - returns total
+    """
     if total <= 0:
         return 0
 

@@ -25,4 +25,7 @@ def makeChange(coins, total):
             min_coins[i] = min(min_coins[i], min_coins[i - coin] + 1)
 
     # Return the minimum number of coins required to reach the total value
-    return min_coins[total] if min_coins[total] != float('inf') else -1
+    if min_coins[total] != float('inf'):
+        return min_coins[total]
+    else:
+        return -1

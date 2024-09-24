@@ -2,7 +2,6 @@
 """Change making module.
 """
 
-
 def makeChange(coins, total):
     """
     make change
